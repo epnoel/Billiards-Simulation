@@ -229,14 +229,14 @@ int main()
 
 
                 // Debug
-                std::cout << "lines[i].y before = " << otherLines.y << std::endl;
-                std::cout << "lines[i].x before = " << otherLines.x << std::endl;
+                //std::cout << "lines[i].y before = " << otherLines.y << std::endl;
+                //std::cout << "lines[i].x before = " << otherLines.x << std::endl;
 
                 otherLines.y -= width;
 
                 // Debug
-                std::cout << "lines[i].y after = " << otherLines.y << std::endl;
-                std::cout << "lines[i].x after = " << otherLines.x << std::endl;
+                //std::cout << "lines[i].y after = " << otherLines.y << std::endl;
+                //std::cout << "lines[i].x after = " << otherLines.x << std::endl;
 
                 float oldX = otherLines.x;
                 float oldY = otherLines.y;
@@ -245,9 +245,9 @@ int main()
                 otherLines.y = -oldX * -1.f + oldY * 0.f;
 
                 // Debug
-                std::cout << "lines[i].y modified = " << otherLines.y << std::endl;
-                std::cout << "lines[i].x modified = " << otherLines.x << std::endl;
-                std::cout << std::endl;
+                //std::cout << "lines[i].y modified = " << otherLines.y << std::endl;
+                //std::cout << "lines[i].x modified = " << otherLines.x << std::endl;
+                //std::cout << std::endl;
 
             }
         }
@@ -353,7 +353,7 @@ int main()
     //animation.balls, ballFileNames, theScale, ballSize);
     // 0.94495.5b18c;3.b78b5.63bb5;5.be47b.63bc3;9.5f1d8.63b82
 
-    std::cout << "animation.balls.size() = " << animation.balls.size() << std::endl;
+    // std::cout << "animation.balls.size() = " << animation.balls.size() << std::endl;
 
     bool doesMatter = false;
 
@@ -382,7 +382,7 @@ int main()
     bool turnOnWhiteHighlight = true; // turns on/off white highlight around balls
     unsigned int frameRateLimit = (int)(abs(1.f / theRate)); // should be equal to 50
 
-    std::cout << "frameLimit = " << frameRateLimit << std::endl;
+    // std::cout << "frameLimit = " << frameRateLimit << std::endl;
 
     float theFrictionFactor = 0.985f; // was 0.985
 
@@ -392,13 +392,13 @@ int main()
     window.setFramerateLimit(50);
 
     float maxVelocityMagnitude = (1.3f * ballSize) / theRate;
-    std::cout << "maxVelocityMagnitude = " << maxVelocityMagnitude << std::endl;
+    // std::cout << "maxVelocityMagnitude = " << maxVelocityMagnitude << std::endl;
 
     PathTracker pathTracker(ballSize/2.f);
     int pathTrackerBallNumber = -1;
 
-    bool pathTrackerMode = true;
-    bool pathPredictorMode = true;
+    bool pathTrackerMode = false;
+    bool pathPredictorMode = false;
 
     float velocityCap = 2.8f; // was 0.1f
 
@@ -759,9 +759,9 @@ int main()
                         ballS2.velocity.y = (normalVector2After.y + tangentVector2After.y);
 
                         // Debug
-                        std::cout << "ballS1.velocity = (" << ballS1.velocity.x << "," << ballS1.velocity.y << ")" << std::endl;
-                        std::cout << "ballS2.velocity = (" << ballS2.velocity.x << "," << ballS2.velocity.y << ")" << std::endl;
-                        std::cout << std::endl;
+                        //std::cout << "ballS1.velocity = (" << ballS1.velocity.x << "," << ballS1.velocity.y << ")" << std::endl;
+                        //std::cout << "ballS2.velocity = (" << ballS2.velocity.x << "," << ballS2.velocity.y << ")" << std::endl;
+                        //std::cout << std::endl;
 
 
                     }
@@ -883,18 +883,18 @@ int main()
                         }
 
                         // Debug
-                        std::cout << "eS = (" << eS.x << "," << eS.y << ")" << std::endl;
-                        std::cout << "ballOldVelocityVector = (" << ballOldVelocityVector.x << "," << ballOldVelocityVector.y << ")" << std::endl;
-                        std::cout << "ballToClosestPoint = (" << ballToClosestPoint.x << "," << ballToClosestPoint.y << ")" << std::endl;
-                        std::cout << "normalWallLine = (" << normalWallLine.x << "," << normalWallLine.y << ")" << std::endl;
-                        std::cout << "cosThetaD1 = " << cosThetaD1 << std::endl;
+                        //std::cout << "eS = (" << eS.x << "," << eS.y << ")" << std::endl;
+                        //std::cout << "ballOldVelocityVector = (" << ballOldVelocityVector.x << "," << ballOldVelocityVector.y << ")" << std::endl;
+                        //std::cout << "ballToClosestPoint = (" << ballToClosestPoint.x << "," << ballToClosestPoint.y << ")" << std::endl;
+                        //std::cout << "normalWallLine = (" << normalWallLine.x << "," << normalWallLine.y << ")" << std::endl;
+                        //std::cout << "cosThetaD1 = " << cosThetaD1 << std::endl;
 
 
                         if (abs(aBall.oldVelocity.x) <= 0.f && abs(aBall.oldVelocity.y) <= 0.f) {
 
                             // Debug
-                            std::cout << "SPECIAL CASE" << std::endl;
-                            std::cout << std::endl;
+                            //std::cout << "SPECIAL CASE" << std::endl;
+                            //std::cout << std::endl;
 
                             continue;
                         }
@@ -932,14 +932,14 @@ int main()
                         //std::cout << "POST = " << posT << std::endl;
 
                         if (negT < 0.f) {
-                            std::cout << "negT less than 0; Table Line = " << tableCount << std::endl;
+                            //std::cout << "negT less than 0; Table Line = " << tableCount << std::endl;
                             //std::cout << "ball Velocity = (" << aBall.velocity.x << "," << aBall.velocity.y << ")" << std::endl;
                         }
 
                         if (true) {
-                            std::cout << "ball Velocity before = (" << aBall.oldVelocity.x << "," << aBall.oldVelocity.y << ")" << std::endl;
-                            std::cout << "Time Left = " << aBall.timeLeft << std::endl;
-                            std::cout << std::endl;
+                            //std::cout << "ball Velocity before = (" << aBall.oldVelocity.x << "," << aBall.oldVelocity.y << ")" << std::endl;
+                            //std::cout << "Time Left = " << aBall.timeLeft << std::endl;
+                            //std::cout << std::endl;
 
                         }
 
@@ -978,7 +978,7 @@ int main()
                     {
 
                         // DEbug
-                        std::cout << "WALL BOX Called" << std::endl;
+                        // std::cout << "WALL BOX Called" << std::endl;
 
                         float x10, y10;
                         x10 = aBall.position.x - aBall.oldVelocity.x * theRate;
@@ -1075,8 +1075,8 @@ int main()
                         if (abs(aBall.oldVelocity.x) <= 0.f && abs(aBall.oldVelocity.y) <= 0.f) {
 
                             // Debug
-                            std::cout << "SPECIAL CASE" << std::endl;
-                            std::cout << std::endl;
+                            //std::cout << "SPECIAL CASE" << std::endl;
+                            //std::cout << std::endl;
 
                             continue;
                         }
@@ -1428,7 +1428,7 @@ int main()
                             // activate the ball's aim mode
 
                             // Debug
-                            std::cout << "Aim Mode Activate On" << std::endl;
+                            //std::cout << "Aim Mode Activate On" << std::endl;
 
                             ball.aimMode = true;
                             ballWithAimModeOnIndex = count;

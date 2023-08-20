@@ -260,14 +260,14 @@ Ball AimShape::getCorrectBallAlongLine(std::vector<Ball> balls, sf::Vector2f nor
         if (abs(slope) > 130.f)
         {
             if (ballCount == 1) {
-                std::cout << "Place:" << std::endl;
-                std::cout << "slope = " << slope << "; yIntercept = " << yIntercept << "; remainder = " << remainder << std::endl;
-                std::cout << "i.radius + ball1.radius = " << ball1.radius + i.radius << std::endl;
-                std::cout << "a = " << a << "; b = " << b << "; c = " << c << std::endl;
-                std::cout << "lineBoundingBox = (" << lineBoundingBox[0].x << "," << lineBoundingBox[0].y << ") and ";
-                std::cout << "(" << lineBoundingBox[1].x << "," << lineBoundingBox[1].y << ")" << std::endl;
-                std::cout << "ball2.position = (" << i.position.x << "," << i.position.y << ")" << std::endl;
-                std::cout << std::endl;
+                //std::cout << "Place:" << std::endl;
+                //std::cout << "slope = " << slope << "; yIntercept = " << yIntercept << "; remainder = " << remainder << std::endl;
+                //std::cout << "i.radius + ball1.radius = " << ball1.radius + i.radius << std::endl;
+                //std::cout << "a = " << a << "; b = " << b << "; c = " << c << std::endl;
+                //std::cout << "lineBoundingBox = (" << lineBoundingBox[0].x << "," << lineBoundingBox[0].y << ") and ";
+                //std::cout << "(" << lineBoundingBox[1].x << "," << lineBoundingBox[1].y << ")" << std::endl;
+                //std::cout << "ball2.position = (" << i.position.x << "," << i.position.y << ")" << std::endl;
+                //std::cout << std::endl;
             }
         }
 
@@ -287,14 +287,14 @@ Ball AimShape::getCorrectBallAlongLine(std::vector<Ball> balls, sf::Vector2f nor
 
             if (abs(slope) > 130.f)
             {
-                std::cout << "Remainder is greater than or equal to 0!" << std::endl;
-                std::cout << "slope = " << slope << "; remainder = " << remainder << std::endl;
-                //std::cout << "a = " << a << "; b = " << b << "; c = " << c << std::endl;
-                std::cout << "lineBoundingBox = (" << lineBoundingBox[0].x << "," << lineBoundingBox[0].y << ") and ";
-                std::cout << "(" << lineBoundingBox[1].x << "," << lineBoundingBox[1].y << ")" << std::endl;
-                std::cout << "ball2.position = (" << i.position.x << "," << i.position.y << ")" << std::endl;
-                std::cout << "(x1,y1) = (" << x1 << "," << y1 << ")" << std::endl;
-                std::cout << "(x2,y2) = (" << x2 << "," << y2 << ")" << std::endl;
+                //std::cout << "Remainder is greater than or equal to 0!" << std::endl;
+                //std::cout << "slope = " << slope << "; remainder = " << remainder << std::endl;
+                ////std::cout << "a = " << a << "; b = " << b << "; c = " << c << std::endl;
+                //std::cout << "lineBoundingBox = (" << lineBoundingBox[0].x << "," << lineBoundingBox[0].y << ") and ";
+                //std::cout << "(" << lineBoundingBox[1].x << "," << lineBoundingBox[1].y << ")" << std::endl;
+                //std::cout << "ball2.position = (" << i.position.x << "," << i.position.y << ")" << std::endl;
+                //std::cout << "(x1,y1) = (" << x1 << "," << y1 << ")" << std::endl;
+                //std::cout << "(x2,y2) = (" << x2 << "," << y2 << ")" << std::endl;
                 //std::cout << "distance1 = " << distance1 << std::endl;
                 //std::cout << "distance2 = " << distance2 << std::endl;
                 std::cout << std::endl;
