@@ -402,6 +402,9 @@ int main()
 
     float velocityCap = 2.8f; // was 0.1f
 
+    bool screenshotOnce = false;
+    int screenshotNumberTracker = 5;
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -415,6 +418,7 @@ int main()
                 // Debug
                 //std::cout << "Key Pressed" << std::endl;
 
+                // Print the coded game state of the simulation
                 if (event.key.code == sf::Keyboard::F) {
 
                     bool allVelocitiesAreZero = true;
@@ -431,6 +435,24 @@ int main()
                         gState.printGameState();
                     }
                 }
+                else if (event.key.code == sf::Keyboard::S)
+                {
+
+                    if (!screenshotOnce)
+                    {
+                        screenshotOnce = true;
+                        screenshotNumberTracker++;
+                        std::string screenShotFileName = "test" + std::to_string(screenshotNumberTracker) + ".png";
+                        sf::Texture screenShotTexture;
+                        screenShotTexture.create(window.getSize().x, window.getSize().y);
+                        screenShotTexture.update(window);
+                        if (screenShotTexture.copyToImage().saveToFile(screenShotFileName))
+                        {
+                            std::cout << "screenshot saved to " << screenShotFileName << std::endl;
+                        }
+                    }
+                }
+                // Turn on/off white highlight circles around balls
                 else if (event.key.code == sf::Keyboard::H)
                 {
                     if (turnOnWhiteHighlight)
@@ -441,6 +463,7 @@ int main()
                         turnOnWhiteHighlight = true;
                     }
                 }
+                // Turn on/off path tracker mode
                 else if (event.key.code == sf::Keyboard::T)
                 {
                     if (ballWithAimModeOnIndex == -1)
@@ -454,6 +477,7 @@ int main()
                         }
                     }
                 }
+                // Turn on/off path predictor mode
                 else if (event.key.code == sf::Keyboard::B)
                 {
                     if (pathPredictorMode)
@@ -464,6 +488,7 @@ int main()
                         pathPredictorMode = true;
                     }
                 }
+                // Exit aim mode
                 else if (event.key.code == sf::Keyboard::Escape)
                 {
                     if (ballWithAimModeOnIndex != -1)
@@ -471,16 +496,19 @@ int main()
                         ballWithAimModeOnIndex = -1;
                     }
                 }
+                // If key mode is activated and aim mode is on, move the aim line counterclockwise
                 else if (event.key.code == sf::Keyboard::A || event.key.code == sf::Keyboard::Left) {
                     if (ballWithAimModeOnIndex != -1 && rotateArrowUsingKeys) {
                         startingAngle -= angleIncrement;
                     }
                 }
+                // If key mode is activated and aim mode is on, move the aim line clockwise
                 else if (event.key.code == sf::Keyboard::D || event.key.code == sf::Keyboard::Right) {
                     if (ballWithAimModeOnIndex != -1 && rotateArrowUsingKeys) {
                         startingAngle += angleIncrement;
                     }
                 }
+                // Turn on/off key mode; if on, white square will appear on bottom right of screen
                 else if (event.key.code == sf::Keyboard::K) {
                     if (rotateArrowUsingKeys == false) {
                         rotateArrowUsingKeys = true;
@@ -489,26 +517,29 @@ int main()
                         rotateArrowUsingKeys = false;
                     }
                 }
+                // Increase length of aim line tip
                 else if (event.key.code == sf::Keyboard::Equal) {
                     currentAimLengthAddedLength += aimLineAddLengthIncrement;
 
                     currentAimLengthAddedLength = std::min(maxAimLineAddedLength, currentAimLengthAddedLength);
                     currentAimLengthAddedLength = std::max(2.f, currentAimLengthAddedLength);
 
-                    std::cout << "= sign pressed" << std::endl;
+                    //std::cout << "= sign pressed" << std::endl;
 
-                    std::cout << "currentAimLengthAddedLength = " << currentAimLengthAddedLength << std::endl;
+                    //std::cout << "currentAimLengthAddedLength = " << currentAimLengthAddedLength << std::endl;
                 }
+                // Decrease length of aim line tip
                 else if (event.key.code == sf::Keyboard::Dash) {
                     currentAimLengthAddedLength -= aimLineAddLengthIncrement;
 
                     currentAimLengthAddedLength = std::min(maxAimLineAddedLength, currentAimLengthAddedLength);
                     currentAimLengthAddedLength = std::max(2.f, currentAimLengthAddedLength);
 
-                    std::cout << "- sign pressed" << std::endl;
+                    //std::cout << "- sign pressed" << std::endl;
 
-                    std::cout << "currentAimLengthAddedLength = " << currentAimLengthAddedLength << std::endl;
+                    //std::cout << "currentAimLengthAddedLength = " << currentAimLengthAddedLength << std::endl;
                 }
+                // Go back, go forward, or print game state
                 else if (event.key.code == sf::Keyboard::Z || event.key.code == sf::Keyboard::R || event.key.code == sf::Keyboard::P) {
 
                     bool allVelsAreZero = true;
@@ -1114,14 +1145,14 @@ int main()
                         //std::cout << "POST = " << posT << std::endl;
 
                         if (negT < 0.f) {
-                            std::cout << "negT less than 0; Table Line = " << tableCount << std::endl;
+                            //std::cout << "negT less than 0; Table Line = " << tableCount << std::endl;
                             //std::cout << "ball Velocity = (" << aBall.velocity.x << "," << aBall.velocity.y << ")" << std::endl;
                         }
 
                         if (true) {
-                            std::cout << "ball Velocity before = (" << aBall.oldVelocity.x << "," << aBall.oldVelocity.y << ")" << std::endl;
-                            std::cout << "Time Left = " << aBall.timeLeft << std::endl;
-                            std::cout << std::endl;
+                            //std::cout << "ball Velocity before = (" << aBall.oldVelocity.x << "," << aBall.oldVelocity.y << ")" << std::endl;
+                            //std::cout << "Time Left = " << aBall.timeLeft << std::endl;
+                            //std::cout << std::endl;
 
                         }
 

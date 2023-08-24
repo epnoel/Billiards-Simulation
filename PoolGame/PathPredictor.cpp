@@ -126,8 +126,8 @@ PathPredictor::PathPredictor(Ball targetBall, std::vector<Ball> balls, std::vect
 				if ((float)theX >= bounds[0].x && (float)theX <= bounds[1].x
 					&& (float)theY >= bounds[0].y && (float)theY <= bounds[1].y)
 				{
-					std::cout << "BOUNDS: (theX, theY) = (" << theX << "," << theY << ")" << std::endl;
-					std::cout << "Line: (" << line[0].x << "," << line[0].y << ") and (" << line[1].x << "," << line[1].y << ")" << std::endl;
+					//std::cout << "BOUNDS: (theX, theY) = (" << theX << "," << theY << ")" << std::endl;
+					//std::cout << "Line: (" << line[0].x << "," << line[0].y << ") and (" << line[1].x << "," << line[1].y << ")" << std::endl;
 				}
 				else {
 					continue;
